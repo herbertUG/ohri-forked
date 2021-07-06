@@ -3,23 +3,19 @@ import styles from './ohri-form-sidebar.component.scss';
 import { scrollIntoView } from '../../../utils/ohri-sidebar';
 
 function OHRIFormSidebar({ currentPage, selectedPage }) {
-  const [activeLink, setActiveLink] = useState(selectedPage);
-  console.log(selectedPage);
-
   const joinWord = value => {
     return value.replace(/\s/g, '');
   };
 
   const handleClick = selected => {
     const activeID = selected.replace(/\s/g, '');
-    setActiveLink(selected);
     scrollIntoView(activeID);
   };
 
   return (
     <div className={styles.leftNavWrapper}>
       {currentPage.map((page, index) => {
-        return (
+        return page.hide ? null : (
           <div
             aria-hidden="true"
             className={joinWord(page.label) === selectedPage ? styles.sidebarSectionActive : styles.sidebarSection}

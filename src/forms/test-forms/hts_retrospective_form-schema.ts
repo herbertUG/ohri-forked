@@ -1961,6 +1961,7 @@ const HTSRestroForm: OHRIFormSchema = {
     },
     {
       label: 'Linkage to care',
+      hide: true,
       sections: [
         {
           label: 'Linkage to care',

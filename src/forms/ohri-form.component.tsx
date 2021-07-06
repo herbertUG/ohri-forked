@@ -242,7 +242,7 @@ const OHRIForm: React.FC<OHRIFormProps> = ({ formJson, encounterUuid, mode, onSu
                           }}>
                           <h4 className={styles.title}>{form.name}</h4>
                           {form.pages.map((page, index) => {
-                            return (
+                            return page.hide ? null : (
                               <div className={styles.pageContent}>
                                 <OHRIFormPage
                                   page={page}

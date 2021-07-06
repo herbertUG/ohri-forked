@@ -37,6 +37,7 @@ export interface OHRIFormSchema {
 
 export interface OHRIFormPage {
   label: string;
+  hide?: boolean;
   sections: Array<OHRIFormSection>;
 }
 export interface OHRIFormField {
