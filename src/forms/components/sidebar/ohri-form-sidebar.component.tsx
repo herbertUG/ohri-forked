@@ -4,6 +4,7 @@ import { scrollIntoView } from '../../../utils/ohri-sidebar';
 
 function OHRIFormSidebar({ currentPage, selectedPage }) {
   const [activeLink, setActiveLink] = useState(selectedPage);
+  console.log(selectedPage);
 
   const joinWord = value => {
     return value.replace(/\s/g, '');
