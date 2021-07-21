@@ -1,11 +1,15 @@
 @import "../../root.scss";
 
 .headerWrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 8000;
     display: flex;
-    width: 100%;
+    align-items: center;
     height: 5.5rem;
-    position:fixed;
-    background: #ffffff;
+    background-color: #ffffff;
     border-bottom: 0.063rem solid #c6c6c6;
 }
 

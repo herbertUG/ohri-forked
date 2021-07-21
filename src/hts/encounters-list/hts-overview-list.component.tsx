@@ -1,16 +1,24 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import styles from './hts-overview-list.scss';
-import Button from 'carbon-components-react/es/components/Button';
 import { Add16 } from '@carbon/icons-react';
 import { useTranslation } from 'react-i18next';
 import OTable from '../../components/data-table/o-table.component';
 import { openmrsFetch } from '@openmrs/esm-framework';
-import { DataTableSkeleton, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import {
+  DataTableSkeleton,
+  OverflowMenu,
+  OverflowMenuItem,
+  ComposedModal,
+  ModalBody,
+  Button,
+} from 'carbon-components-react';
 import EmptyState from '../../components/empty-state/empty-state.component';
 import { launchOHRIWorkSpace } from '../../workspace/ohri-workspace-utils';
 import moment from 'moment';
 import { getForm } from '../../utils/forms-loader';
 import { observeOn } from 'rxjs/operators';
+import OHRIFormView from './ohri-form-view.component';
+import OHRIForm from '../../forms/ohri-form.component';
 
 interface HtsOverviewListProps {
   patientUuid: string;
@@ -34,6 +42,8 @@ const HtsOverviewList: React.FC<HtsOverviewListProps> = ({ patientUuid }) => {
   // const hivTestDateUUID = 'bce64590-4758-4011-9bf9-1b29d80b5f75'; //Concet for Test Date
   const hivTestFinal_DateUUID = ' e16b0068-b6a2-46b7-aba9-e3be00a7b4ab'; //
 
+  const [open, setOpen] = useState(false);
+
   const forceComponentUpdate = () => setCounter(counter + 1);
 
   const htsRetroForm = useMemo(() => {
@@ -41,11 +51,13 @@ const HtsOverviewList: React.FC<HtsOverviewListProps> = ({ patientUuid }) => {
   }, []);
 
   const launchHTSForm = () => {
-    launchOHRIWorkSpace('ohri-forms-view-ext', {
-      title: htsRetroForm?.name,
-      state: { updateParent: forceComponentUpdate, formJson: htsRetroForm },
-    });
+    setOpen(true);
+    // launchOHRIWorkSpace('ohri-forms-view-ext', {
+    //   title: htsRetroForm?.name,
+    //   state: { updateParent: forceComponentUpdate, formJson: htsRetroForm },
+    // });
   };
+
   const editHTSEncounter = encounterUuid => {
     launchOHRIWorkSpace('ohri-forms-view-ext', {
       title: htsRetroForm?.name,
@@ -127,6 +139,12 @@ const HtsOverviewList: React.FC<HtsOverviewListProps> = ({ patientUuid }) => {
 
   return (
     <>
+      <ComposedModal open={open} onClose={() => setOpen(false)} size="lg">
+        {/* <ModalHeader title={htsRetroForm?.name} label="Form Engine" style={{ position: 'fixed' }} /> */}
+        <ModalBody className={styles.modal}>
+          <OHRIForm formJson={htsRetroForm} />
+        </ModalBody>
+      </ComposedModal>
       {isLoading ? (
         <DataTableSkeleton rowCount={rowCount} />
       ) : tableRows.length > 0 ? (

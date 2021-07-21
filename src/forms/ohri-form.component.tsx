@@ -202,11 +202,13 @@ const OHRIForm: React.FC<OHRIFormProps> = ({ formJson, encounterUuid, mode, onSu
               <LoadingIcon />
             ) : (
               <>
-                <PatientBanner patient={patient} />
                 <Grid>
-                  <Row className={styles.ohriformcontainer}>
-                    <Column lg={2} md={2} sm={1}>
-                      <div className={styles.ohriSidebar}>
+                  <Row>
+                    <PatientBanner patient={patient} />
+                  </Row>
+                  <div className={styles.formContainer}>
+                    <div>
+                      <div className={styles.stickyColumn}>
                         <OHRIFormSidebar currentPage={currentPage} selectedPage={selectedPage} />
                         <hr className={styles.sideBarHorizontalLine} />
                         {mode != 'view' && (
@@ -223,9 +225,12 @@ const OHRIForm: React.FC<OHRIFormProps> = ({ formJson, encounterUuid, mode, onSu
                           {mode == 'view' ? 'Close' : 'Cancel'}
                         </Button>
                       </div>
-                    </Column>
-                    <Column lg={10} md={6}>
-                      <div className={styles.contentWrapper}>
+                    </div>
+                    <div>
+                      <Grid
+                        style={{ marginBottom: '40vh' }}
+                        // className={styles.ohriformcontainer}
+                      >
                         <OHRIFormContext.Provider
                           value={{
                             values: props.values,
@@ -243,19 +248,17 @@ const OHRIForm: React.FC<OHRIFormProps> = ({ formJson, encounterUuid, mode, onSu
                           <h4 className={styles.title}>{form.name}</h4>
                           {form.pages.map((page, index) => {
                             return (
-                              <div className={styles.pageContent}>
-                                <OHRIFormPage
-                                  page={page}
-                                  onFieldChange={onFieldChange}
-                                  setSelectedPage={setSelectedPage}
-                                />
-                              </div>
+                              <OHRIFormPage
+                                page={page}
+                                onFieldChange={onFieldChange}
+                                setSelectedPage={setSelectedPage}
+                              />
                             );
                           })}
                         </OHRIFormContext.Provider>
-                      </div>
-                    </Column>
-                  </Row>
+                      </Grid>
+                    </div>
+                  </div>
                 </Grid>
               </>
             )}
