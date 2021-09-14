@@ -88,7 +88,70 @@
                                     }
                                 ]
                             },
-                            "id": "dateOfViralLoadResult"
+                            "id": "dateOfViralLoadResult",
+                            "behaviours": [
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_RESULT",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "*",
+                                    "required": "false",
+                                    "hide": {
+                                        "hideWhenExpression": "selectLabResult !== ''"
+                                    }
+                                }
+                            ]
                         },
                         {
                             "label": "Viral Load Result Interpretation",
@@ -127,7 +190,70 @@
                                     }
                                 ]
                             },
-                            "id": "viralLoadResultInterpretation"
+                            "id": "viralLoadResultInterpretation",
+                            "behaviours": [
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_RESULT",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "*",
+                                    "required": "false",
+                                    "hide": {
+                                        "hideWhenExpression": "selectLabResult !== ''"
+                                    }
+                                }
+                            ]
                         },
                         {
                             "label": "Viral Load Result in Copies/ml",
@@ -157,7 +283,70 @@
                                     }
                                 ]
                             },
-                            "id": "viralLoadResultInCopies"
+                            "id": "viralLoadResultInCopies",
+                            "behaviours": [
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_RESULT",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "*",
+                                    "required": "false",
+                                    "hide": {
+                                        "hideWhenExpression": "selectLabResult !== ''"
+                                    }
+                                }
+                            ]
                         },
                         {
                             "label": "Date of CD4 Result",
@@ -180,7 +369,70 @@
                                     }
                                 ]
                             },
-                            "id": "dateOfCD4Result"
+                            "id": "dateOfCD4Result",
+                            "behaviours": [
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_RESULT",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "*",
+                                    "required": "false",
+                                    "hide": {
+                                        "hideWhenExpression": "selectLabResult !== ''"
+                                    }
+                                }
+                            ]
                         },
                         {
                             "label": "CD4 Result",
@@ -207,6 +459,69 @@
                                 ]
                             },
                             "id": "cd4Result",
+                            "behaviours": [
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_CD4_REQUEST",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "LAB_VIRAL_LOAD_RESULT",
+                                    "required": "true",
+                                    "unspecified": "true",
+                                    "hide": {
+                                        "hideWhenExpression": "false"
+                                    },
+                                    "validators": [
+                                        {
+                                            "type": "date",
+                                            "allowFutureDates": "false"
+                                        },
+                                        {
+                                            "type": "js_expression",
+                                            "failsWhenExpression": "myValue <= today()& myValue >= 1/1/1980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "intent": "*",
+                                    "required": "false",
+                                    "hide": {
+                                        "hideWhenExpression": "selectLabResult !== ''"
+                                    }
+                                }
+                            ],
                             "questions": [
                                 {
                                     "label": "CD4 count",
@@ -231,6 +546,24 @@
                     ]
                 }
             ]
+        }
+    ],
+    "availableIntents": [
+        {
+            "intent": "LAB_VIRAL_LOAD_REQUEST",
+            "display": "LAB VIRAL LOAD REQUEST"
+        },
+        {
+            "intent": "LAB_CD4_REQUEST",
+            "display": "LAB CD4 REQUEST"
+        },
+        {
+            "intent": "LAB_VIRAL_LOAD_RESULT",
+            "display": "LAB VIRAL LOAD RESULT"
+        },
+        {
+            "intent": "LAB_CD4_RESULT",
+            "display": "LAB CD4 RESULT"
         }
     ],
     "processor": "EncounterFormProcessor",
